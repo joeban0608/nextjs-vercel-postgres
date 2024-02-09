@@ -3,11 +3,11 @@ import { Card, CardContent, CardDescription, CardTitle } from "../ui/card";
 import { FeedProps } from "@/types/feed";
 
 const Feed = ({
-  id,
+  // id,
   title,
   content,
-  published,
-  authorId,
+  // published,
+  // authorId,
   updatedAt,
   author,
 }: FeedProps) => {
@@ -25,11 +25,9 @@ const Feed = ({
   return (
     <Card className="flex flex-col w-full p-8 gap-4">
       <CardTitle>{title}</CardTitle>
-      <CardDescription>
-        <div className="flex justify-between">
-          <span>By {author.name}</span>
-          <span>Updated: {formattedDate}</span>
-        </div>
+      <CardDescription className="flex justify-between">
+        <span>By {author?.name || 'Who I am'}</span>
+        <span>Updated: {formattedDate}</span>
       </CardDescription>
       <CardContent className="p-0">{content}</CardContent>
     </Card>
